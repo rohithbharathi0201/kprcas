@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Assignment Submission Form</title>
     <style>
-        h2{
-            color: blue;
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .submitted-data {
+            margin-top: 20px;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
 </head>
-<h1>hello kprh2>
-</h1>
 <body>
-    <h2>it</
-    <h1> welcome</h1>
+
+<div class="container">
+    <h2>Submit Your Assignment</h2>
+    <form id="assignmentForm">
+        <label>Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label>Class:</label><br>
+        <input type="text" id="class" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" required><br><br>
+
+        <label>Assignment Submitted:</label><br>
+        <select id="submitted">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div class="submitted-data">
+        <h3>Submitted Details:</h3>
+        <ul id="detailsList"></ul>
+    </div>
+</div>
+
+<script>
+    function submitForm() {
+        var name = document.getElementById("name").value;
+        var className = document.getElementById("class").value;
+        var email = document.getElementById("email").value;
+        var submitted = document.getElementById("submitted").value;
+
+        var detailsList = document.getElementById("detailsList");
+        detailsList.innerHTML = `
+            <li><strong>Name:</strong> ${name}</li>
+            <li><strong>Class:</strong> ${className}</li>
+            <li><strong>Email:</strong> ${email}</li>
+            <li><strong>Assignment Submitted:</strong> ${submitted}</li> add
+        `;
+    }
+</script>
+
 </body>
 </html>
